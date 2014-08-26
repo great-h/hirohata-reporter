@@ -1,0 +1,35 @@
+# facebook rss: http://www.lottaleben.de/tools/rss-feed-fuer-facebook-seiten-generieren/
+---
+targets:
+  - name: "Movin'on"
+    sources:
+    - type: facebook
+      url: "https://www.facebook.com/feeds/page.php?id=723399384347509&format=rss20"
+  - name: "安芸津よし"
+    sources:
+      - type: rss
+        url: http://akitsu.co/feed
+  - name: "tecre"
+    sources:
+    - type: rss
+      url: http://tecre.jp/feed/
+  - name: "キマグレミーティング"
+    sources:
+    - type: facebook
+      url: "https://www.facebook.com/feeds/page.php?id=501348703275034&format=rss20"
+  - name: "PocketPlan"
+    sources:
+    - type: facebook
+      url: "https://www.facebook.com/feeds/page.php?id=115520338533947&format=rss20"
+  - name: "広島の楽しい100人"
+    sources:
+    - type: facebook
+      url: "https://www.facebook.com/feeds/page.php?id=1427131820895292&format=rss20"
+  - name: "殿倶楽部"
+    sources:
+    - type: facebook
+      url: "https://www.facebook.com/feeds/page.php?id=121120534647214&format=rss20"
+  - name: "すごい広島"
+    sources:
+    - type: facebook
+      url: "https://www.facebook.com/feeds/page.php?id=393886870753964&format=rss20"
