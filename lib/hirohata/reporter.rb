@@ -13,7 +13,15 @@ module Hirohata
 
     def self.report
       reporter = Hirohata::Reporter.new(config)
-      reporter.report(Date.today.last_week, ARGV.first || :all)
+      reporter.report(Date.today.last_week, :all)
+    end
+
+    def self.start_date(date)
+      date.beginning_of_week
+    end
+
+    def self.end_date(date)
+      date.next_week.beginning_of_week.yesterday
     end
 
     def initialize(config)
@@ -23,10 +31,18 @@ module Hirohata
     end
 
     def report(date = Date.today,target = :all)
-      start = date.beginning_of_week
-      end_date = date.next_week.beginning_of_week.yesterday
+      start = self.class.start_date(date)
+      end_date = self.class.end_date(date)
       range = start...end_date
-      ret = "#{start} 〜 #{end_date}\n\n"
+      ret = <<STRING
+---
+layout: post
+title:  "#{end_date.strftime('%Y年%m月%d日')}までの各ユニットの活動"
+date:   #{end_date} 00:00:00
+---
+
+STRING
+
       case target
       when :all
         targets = @projects
@@ -37,6 +53,7 @@ module Hirohata
       unless reports.empty?
         ret += reports.join("\n\n")
       end
+      ret
     end
   end
 
@@ -53,12 +70,16 @@ module Hirohata
       @config["sources"].map { |source| Source.new(source,self) }
     end
 
+    def url
+      @config["url"]
+    end
+
     def report(range)
       reports = sources.map { |source| source.report(range) }.flatten
       if reports.empty?
         ""
       else
-        ret = "# " + name
+        ret = "# [#{name}](#{url})"
         ret += "\n\n"
         ret += reports.join
         ret

@@ -1,35 +1,50 @@
 # facebook rss: http://www.lottaleben.de/tools/rss-feed-fuer-facebook-seiten-generieren/
 ---
 targets:
+  - name: "ヒロハタ"
+    url: "http://hiro-hata.com/"
+    sources:
+    - type: rss
+      url: "http://hiro-hata.com/rss"
+    - type: facebook
+      url: "https://www.facebook.com/feeds/page.php?id=619180321492100&format=rss20"
   - name: "Movin'on"
+    url: "http://coworking-hiroshima.com/"
     sources:
     - type: facebook
       url: "https://www.facebook.com/feeds/page.php?id=723399384347509&format=rss20"
   - name: "安芸津よし"
+    url: "http://akitsu.co/"
     sources:
       - type: rss
         url: http://akitsu.co/feed
   - name: "tecre"
+    url: "http://tecre.jp/"
     sources:
     - type: rss
       url: http://tecre.jp/feed/
   - name: "キマグレミーティング"
+    url: "https://www.facebook.com/kimaguremeeting"
     sources:
     - type: facebook
       url: "https://www.facebook.com/feeds/page.php?id=501348703275034&format=rss20"
   - name: "PocketPlan"
+    url: "http://pocketplan.jp/"
     sources:
     - type: facebook
       url: "https://www.facebook.com/feeds/page.php?id=115520338533947&format=rss20"
   - name: "広島の楽しい100人"
+    url: "https://www.facebook.com/h100parson"
     sources:
     - type: facebook
       url: "https://www.facebook.com/feeds/page.php?id=1427131820895292&format=rss20"
   - name: "殿倶楽部"
+    url: "https://www.facebook.com/tonoclub.info"
     sources:
     - type: facebook
       url: "https://www.facebook.com/feeds/page.php?id=121120534647214&format=rss20"
   - name: "すごい広島"
+    url: "http://great-h.github.io/"
     sources:
     - type: facebook
       url: "https://www.facebook.com/feeds/page.php?id=393886870753964&format=rss20"
