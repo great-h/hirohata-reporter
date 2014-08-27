@@ -43,6 +43,11 @@ targets:
     sources:
     - type: facebook
       url: "https://www.facebook.com/feeds/page.php?id=121120534647214&format=rss20"
+  - name: "メガフォン"
+    url: "https://github.com/tsuchim/megaphone"
+    sources:
+    - type: rss
+      url: "https://github.com/tsuchim/megaphone/commits/master.atom"
   - name: "すごい広島"
     url: "http://great-h.github.io/"
     sources:
