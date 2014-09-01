@@ -127,6 +127,7 @@ STRING
       parse_rss_base(range) do |item|
         full_sanitizer = Rails::Html::FullSanitizer.new
         title = full_sanitizer.sanitize(item.description)[0..100]
+        title = "タイトルなし" if title.empty?
         link = item.link
         date = item.date.to_date
         "#{date} [#{title}](#{link})"
@@ -142,7 +143,13 @@ STRING
       end
 
       rss.items.delete_if { |item|
-        ! range.include? item.date.to_date
+        if item.date.nil?
+          true
+        else
+          ! range.include?(item.date.to_date)
+        end
+      }.sort_by { |item|
+        item.date.to_date
       }.map { |item|
         yield item
       }
