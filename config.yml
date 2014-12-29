@@ -8,12 +8,12 @@ targets:
       url: "http://hiro-hata.com/rss"
     - type: facebook
       url: "https://www.facebook.com/feeds/page.php?id=619180321492100&format=rss20"
-  - name: "Movin'on"
+  - name: "MOVIN'ON"
     url: "http://coworking-hiroshima.com/"
     sources:
     - type: facebook
       url: "https://www.facebook.com/feeds/page.php?id=723399384347509&format=rss20"
-  - name: "Shake Hands"
+  - name: "Shakehands"
     url: "http://www.shakehands.jp/"
     sources:
       - type: facebook
@@ -34,7 +34,7 @@ targets:
     - type: facebook
       url: "https://www.facebook.com/feeds/page.php?id=501348703275034&format=rss20"
   - name: "PocketPlan"
-    url: "http://pocketplan.jp/"
+    url: "http://pocketplan.wix.com/pocketplan"
     sources:
     - type: facebook
       url: "https://www.facebook.com/feeds/page.php?id=115520338533947&format=rss20"

@@ -33,7 +33,7 @@ module Hirohata
     def report(date = Date.today,target = :all)
       start = self.class.start_date(date)
       end_date = self.class.end_date(date)
-      range = start...end_date
+      range = start..end_date
       ret = <<STRING
 ---
 layout: post
