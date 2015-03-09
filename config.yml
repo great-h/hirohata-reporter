@@ -48,6 +48,11 @@ targets:
     sources:
     - type: facebook
       url: "https://www.facebook.com/feeds/page.php?id=121120534647214&format=rss20"
+  - name: "子どもキャリア塾"
+    url: "http://kodomo-career.com/"
+    sources:
+    - type: rss
+      url: http://kodomo-career.com/feed
   - name: "メガフォン"
     url: "https://github.com/tsuchim/megaphone"
     sources:
