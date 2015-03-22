@@ -58,6 +58,11 @@ targets:
     sources:
     - type: rss
       url: "https://github.com/tsuchim/megaphone/commits/master.atom"
+  - name: "ドットビーズ"
+    url: "http://dotbeads.com/"
+    sources:
+    - type: rss
+      url: "http://dotbeads.com/feed/"
   - name: "すごい広島"
     url: "http://great-h.github.io/"
     sources:
