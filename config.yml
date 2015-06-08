@@ -60,11 +60,6 @@ targets:
       url: "https://github.com/tsuchim/megaphone/commits/master.atom"
     - type: facebook
       url: "https://www.facebook.com/feeds/page.php?id=649742641811073&format=rss20"
-  - name: "ドットビーズ"
-    url: "http://dotbeads.com/"
-    sources:
-    - type: rss
-      url: "http://dotbeads.com/feed/"
   - name: "パークマップ広島"
     url: "http://parkmap.eiel.info"
     sources:
