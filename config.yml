@@ -1,4 +1,3 @@
-# facebook rss: http://www.lottaleben.de/tools/rss-feed-fuer-facebook-seiten-generieren/
 ---
 targets:
   - name: "ヒロハタ"
@@ -7,17 +6,17 @@ targets:
     - type: rss
       url: "http://hiro-hata.com/rss"
     - type: facebook
-      url: "https://www.facebook.com/feeds/page.php?id=619180321492100&format=rss20"
+      id: "619180321492100"
   - name: "MOVIN'ON"
     url: "http://coworking-hiroshima.com/"
     sources:
     - type: facebook
-      url: "https://www.facebook.com/feeds/page.php?id=723399384347509&format=rss20"
+      id: "723399384347509"
   - name: "Shakehands"
     url: "http://www.shakehands.jp/"
     sources:
       - type: facebook
-        url: https://www.facebook.com/feeds/page.php?id=592127770838621&format=rss20
+        id: "592127770838621"
   - name: "安芸津よし"
     url: "http://akitsu.co/"
     sources:
@@ -32,22 +31,22 @@ targets:
     url: "https://www.facebook.com/kimaguremeeting"
     sources:
     - type: facebook
-      url: "https://www.facebook.com/feeds/page.php?id=501348703275034&format=rss20"
+      id: "501348703275034"
   - name: "PocketPlan"
     url: "http://pocketplan.wix.com/pocketplan"
     sources:
     - type: facebook
-      url: "https://www.facebook.com/feeds/page.php?id=115520338533947&format=rss20"
+      id: "115520338533947"
   - name: "広島の楽しい100人"
     url: "https://www.facebook.com/h100parson"
     sources:
     - type: facebook
-      url: "https://www.facebook.com/feeds/page.php?id=1427131820895292&format=rss20"
+      id: "1427131820895292"
   - name: "殿倶楽部"
     url: "https://www.facebook.com/tonoclub.info"
     sources:
     - type: facebook
-      url: "https://www.facebook.com/feeds/page.php?id=121120534647214&format=rss20"
+      id: "121120534647214"
   - name: "子どもキャリア塾"
     url: "http://kodomo-career.com/"
     sources:
@@ -59,14 +58,14 @@ targets:
     - type: rss
       url: "https://github.com/tsuchim/megaphone/commits/master.atom"
     - type: facebook
-      url: "https://www.facebook.com/feeds/page.php?id=649742641811073&format=rss20"
+      id: "649742641811073"
   - name: "パークマップ広島"
     url: "http://parkmap.eiel.info"
     sources:
     - type: facebook
-      url: "https://www.facebook.com/feeds/page.php?id=449921165167160&format=rss20"
+      id: "449921165167160"
   - name: "すごい広島"
     url: "http://great-h.github.io/"
     sources:
     - type: facebook
-      url: "https://www.facebook.com/feeds/page.php?id=393886870753964&format=rss20"
+      id: "393886870753964"

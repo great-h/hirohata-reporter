@@ -1,7 +1,10 @@
+# -*- coding: utf-8 -*-
 require "hirohata/reporter/version"
 require 'yaml'
 require 'rss'
 require 'date'
+require 'fbgraph'
+FBGraph.config # Rails HTML SanitizerのせいでRailsプロジェクトと冠ちがいしてしまうので対策
 require 'active_support/all'
 require 'rails-html-sanitizer'
 
@@ -103,6 +106,12 @@ STRING
       @config["type"]
     end
 
+    def client
+      @client||= FBGraph::Client.new(:client_id => ENV["FACEBOOK_CLIENT_ID"],
+                                     :secret_id =>ENV['FACEBOOK_SECRET_ID'],
+                                     :token => ENV['FACEBOOK_TOKEN'])
+    end
+
     def week_items(range)
       case type
       when "rss"
@@ -124,12 +133,22 @@ STRING
     end
 
     def parse_facebook(range)
-      parse_rss_base(range) do |item|
-        full_sanitizer = Rails::Html::FullSanitizer.new
-        title = full_sanitizer.sanitize(item.description)[0..100]
-        title = "タイトルなし" if title.empty?
-        link = item.link
-        date = item.date.to_date
+      page_id = @config["id"]
+      page = client.selection.page(page_id).info!
+      url = page.link
+      items = client
+        .selection
+        .page(page_id)
+        .feed
+        .until(range.max)
+        .since(range.min)
+        .info!
+        .data
+        .data || []
+      items.map do |item|
+        date = item.created_time.to_date
+        title = item.message
+        link = "#{url}/posts/#{item.object_id}"
         "#{date} [#{title}](#{link})"
       end
     end
