@@ -148,7 +148,8 @@ STRING
       items.map do |item|
         date = item.created_time.to_date
         title = item.message
-        link = "#{url}/posts/#{item.object_id}"
+        id = item.id.split("_")[1]
+        link = "#{url}/posts/#{id}"
         "#{date} [#{title}](#{link})"
       end
     end
