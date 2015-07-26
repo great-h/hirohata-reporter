@@ -53,7 +53,7 @@ targets:
     - type: rss
       url: http://kodomo-career.com/feed
   - name: "メガフォン"
-    url: "https://github.com/tsuchim/megaphone"
+    url: "https://m-ph.org"
     sources:
     - type: rss
       url: "https://github.com/tsuchim/megaphone/commits/master.atom"
