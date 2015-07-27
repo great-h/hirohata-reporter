@@ -38,7 +38,7 @@ targets:
     - type: facebook
       id: "115520338533947"
   - name: "広島の楽しい100人"
-    url: "https://www.facebook.com/h100parson"
+    url: "http://hiroshima.100person.jp"
     sources:
     - type: facebook
       id: "1427131820895292"
