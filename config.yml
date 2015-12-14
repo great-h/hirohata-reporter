@@ -64,6 +64,11 @@ targets:
     sources:
     - type: facebook
       id: "449921165167160"
+  - name: "スマホで学習！＆ネットで工場見学！"
+    url: "http://www.hyogo-intercampus.ne.jp/gallery/ictkyouzai/"
+    sources:
+    - type: facebook
+      id: "312502515550676"
   - name: "すごい広島"
     url: "http://great-h.github.io/"
     sources:

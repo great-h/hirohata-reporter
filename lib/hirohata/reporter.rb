@@ -78,13 +78,17 @@ STRING
     end
 
     def report(range)
-      reports = sources.map { |source| source.report(range) }.flatten
+      reports = sources.map { |source| source.week_items(range) }
+        .flatten
+        .sort_by { |item|
+          item.date.to_date
+        }
       if reports.empty?
         ""
       else
         ret = "# [#{name}](#{url})"
         ret += "\n\n"
-        ret += reports.join
+        ret += reports.map(&:report).join
         ret
       end
     end
@@ -128,7 +132,7 @@ STRING
         title = item.title
         link = item.link
         date = item.date.to_date
-        "#{date} [#{title}](#{link})"
+        Item.new(title, link, date)
       end
     end
 
@@ -149,8 +153,8 @@ STRING
         date = item.created_time.to_date
         title = item.message
         id = item.id.split("_")[1]
-        link = "#{url}/posts/#{id}"
-        "#{date} [#{title}](#{link})"
+        link = "#{url}posts/#{id}"
+        Item.new(title, link, date)
       end
     end
 
@@ -174,9 +178,20 @@ STRING
         yield item
       }
     end
+  end
 
-    def report(range)
-      week_items(range).map { |item| "* #{item}\n" }
+  class Item
+
+    attr_reader :date
+
+    def initialize(title, url, date)
+      @title = title
+      @url = url
+      @date = date
+    end
+
+    def report
+      "* #{@date} [#{@title}](#{@link})\n"
     end
   end
 end
